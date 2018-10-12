@@ -1,6 +1,19 @@
 # Marlin 3D Printer Firmware
 <img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
 
+##################################################################
+##################################################################
+##################################################################
+Marlin 1.1.9 adaptado a Witbox 1. Por villamany:
+NOTA SOBRE AUTOMATIZAR VENTILADORES DE WITBOX 1
+La salida D8 de Ramps, normalmente utilizada para la cama caliente y por tanto sin uso alguno en Witbox 1 se ha configurado para que funcione como "ventilador del extrusor 0", por tanto estará activa siempre que el extrusor este por encima de 50ºC.
+Si quieres controlar los 5 ventiladores (2 traseros + 2 de electronica + 1 refrigeración extrusor) para que se apaguen cuando la impresora no está trabajando, tan solo debes desconectar de la fuente de alimentación los 5 negativos de los ventiladores que son los cables negros de menor sección y dejar solo el de la iluminación led, estos 5 cables se unen todos con una regleta y se conectan a la borna D8 de la RAMPS.
+De esta forma los ventiladores solo funcioan cuando el extrusor este por encima de 50ºC evitando ruidos y desgaste innecesario.
+##################################################################
+##################################################################
+##################################################################
+
+
 ## Marlin 1.1
 
 Marlin 1.1 represents an evolutionary leap over Marlin 1.0.2. It is the result of over two years of effort by several volunteers around the world who have paid meticulous and sometimes obsessive attention to every detail. For this release we focused on code quality, performance, stability, and overall user experience. Several new features have also been added, many of which require no extra hardware.
