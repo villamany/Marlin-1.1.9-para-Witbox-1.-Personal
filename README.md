@@ -4,11 +4,15 @@
 ##################################################################
 ##################################################################
 ##################################################################
+
 Marlin 1.1.9 adaptado a Witbox 1. Por villamany:
+
 NOTA SOBRE AUTOMATIZAR VENTILADORES DE WITBOX 1
+
 La salida D8 de Ramps, normalmente utilizada para la cama caliente y por tanto sin uso alguno en Witbox 1 se ha configurado para que funcione como "ventilador del extrusor 0", por tanto estará activa siempre que el extrusor este por encima de 50ºC.
 Si quieres controlar los 5 ventiladores (2 traseros + 2 de electronica + 1 refrigeración extrusor) para que se apaguen cuando la impresora no está trabajando, tan solo debes desconectar de la fuente de alimentación los 5 negativos de los ventiladores que son los cables negros de menor sección y dejar solo el de la iluminación led, estos 5 cables se unen todos con una regleta y se conectan a la borna D8 de la RAMPS.
 De esta forma los ventiladores solo funcioan cuando el extrusor este por encima de 50ºC evitando ruidos y desgaste innecesario.
+
 ##################################################################
 ##################################################################
 ##################################################################
