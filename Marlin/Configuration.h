@@ -588,15 +588,17 @@
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
+ *                                      98.8425405
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 600.0*8/3, 102.073 }
+ #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 600.0*8/3, 102.073 } //Para la rueda dentada que trae el extrusor de Witbox 1
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 600.0*8/3, 98.8425405 } //Para la rueda dentada que he montado yo plana de 40 dientes
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 7.2, 80 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 7.2, 80 }//{ 250, 250, 7.2, 80 } //6.6 es la velocidad que aguanta el extrusor extruyendo continuamente pero dejo 80 porque a 6.6 las retracciones son muy lentas y hace una pausa cada vez que retrae
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -604,7 +606,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 10, 1000 }
+#define DEFAULT_MAX_ACCELERATION      { 5000, 5000, 50, 1000 }//{ 1000, 1000, 10, 1000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -614,9 +616,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          1000//3000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1000//3000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000//3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -1242,7 +1244,7 @@
 #define PREHEAT_1_FAN_SPEED   0 // Value from 0 to 255
 
 #define PREHEAT_2_TEMP_HOTEND 220
-#define PREHEAT_2_TEMP_BED    0
+#define PREHEAT_2_TEMP_BED    90
 #define PREHEAT_2_FAN_SPEED   0 // Value from 0 to 255
 
 /**
@@ -1261,7 +1263,7 @@
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
   //#define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
-  #define NOZZLE_PARK_POINT { (X_MAX_POS -2), (Y_MAX_POS -2), 20 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MAX_POS), 5 }
   #define NOZZLE_PARK_XY_FEEDRATE 100   // X and Y axes feedrate in mm/s (also used for delta printers Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE 5      // Z axis feedrate in mm/s (not used for delta printers)
 #endif
@@ -1376,7 +1378,7 @@
  *
  * :{ 'en':'English', 'an':'Aragonese', 'bg':'Bulgarian', 'ca':'Catalan', 'cn':'Chinese', 'cz':'Czech', 'cz_utf8':'Czech (UTF8)', 'de':'German', 'el':'Greek', 'el-gr':'Greek (Greece)', 'es':'Spanish', 'es_utf8':'Spanish (UTF8)', 'eu':'Basque-Euskera', 'fi':'Finnish', 'fr':'French', 'fr_utf8':'French (UTF8)', 'gl':'Galician', 'hr':'Croatian', 'it':'Italian', 'kana':'Japanese', 'kana_utf8':'Japanese (UTF8)', 'nl':'Dutch', 'pl':'Polish', 'pt':'Portuguese', 'pt-br':'Portuguese (Brazilian)', 'pt-br_utf8':'Portuguese (Brazilian UTF8)', 'pt_utf8':'Portuguese (UTF8)', 'ru':'Russian', 'sk_utf8':'Slovak (UTF8)', 'tr':'Turkish', 'uk':'Ukrainian', 'zh_CN':'Chinese (Simplified)', 'zh_TW':'Chinese (Taiwan)', 'test':'TEST' }
  */
-#define LCD_LANGUAGE es //en
+#define LCD_LANGUAGE en
 
 /**
  * LCD Character Set
